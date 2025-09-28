@@ -1,13 +1,18 @@
 name: Update GitHub Activity
 on:
   workflow_dispatch: # Allows manual triggering
+permissions: 
+  contents: write 
+  
 jobs: 
   update-activity:
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v4
       - name: Update Github Activity
-        uses: TheDanniCraft/activity-10g@v1
+        uses: jamesgeorge007/github-activity-readme@v0.3.0
         with:
           GITHUB_USERNAME: "Danieloneone"
+          COMMIT_MSG: "chore(readme):update recent activity [skip ci]"
+          env:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
