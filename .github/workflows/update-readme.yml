@@ -1,0 +1,13 @@
+name: Update GitHub Activity
+on:
+  workflow_dispatch: # Allows manual triggering
+jobs: 
+  update-activity:
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update Github Activity
+        uses: TheDanniCraft/activity-10g@v1
+        with:
+          GITHUB_USERNAME: "Danieloneone"
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
